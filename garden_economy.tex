@@ -3,9 +3,16 @@
 % For figures
 \usepackage{graphicx} % more modern
 \usepackage{subfigure} 
+\usepackage{tikz}
+%\usepackage{pgfplots}
+\usepackage{amsmath}
 
 % For citations
-\usepackage[round]{natbib}
+%\usepackage[round]{natbib}
+%\usepackage[backend=biber,style=alphabetic,citestyle=authoryear-comp]{biblatex}
+\usepackage[authordate,bibencoding=auto,strict,backend=biber,natbib]{biblatex-chicago}
+ 
+\addbibresource{abm.bib} %Imports bibliography file
 
 % For algorithms
 \usepackage{algorithm}
@@ -16,116 +23,272 @@
 \usepackage{amsmath}
 \usepackage{kbordermatrix} %http://www.hss.caltech.edu/~kcb/TeX/kbordermatrix.sty
 
+%BH additions for pagestyles
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Haney, \textit{Beyond GDP}}
+\rhead{Working Draft: Please do not distribute.}
+\rfoot{Page \thepage \hspace{1pt} of \pageref{LastPage}}
 \usepackage{multicol}
+\renewcommand{\headrulewidth}{.25pt}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document} 
 
-\title{Garden Economy: Using ecological information metrics to shed light on economic vitality}
-\author{Becky Roselius Haney}
-\maketitle
+\title{\textbf{Working Draft: Please do not distribute.}\\Beyond GDP: Measuring Economic Growth and Resilience
+Using Ecological Network Analysis}
+\author{Becky Roselius Haney~\footnote{Associate 
+Professor of Economics, Calvin College, 1740 Knollcrest Cir SE, Grand Rapids, MI USA.
+bhaney@calvin.edu.}}
 
+\maketitle
+\thispagestyle{empty} 
 
 \begin{abstract} 
-Macroeconomic policy has an ill-defined optimization
-problem: max Y. That is, guiding principle for nearly all
-policy decisions is to maximize GDP - Gross Domestic Product. GDP
-is equal to National Income, thus, striving to maximize GDP
-is analogous to a business using maximum revenue as its guiding
-principle. what would a well-defined macroeconomic optimization
-problem look like? It would maximize something like ``well-being''
-or ``economic vitality'' subject to binding constraints.~\footnote{Associate 
-Professor of Economics, Calvin College, 1740 Knollcrest Cir SE, Grand Rapids, MI USA. This research
-has been generously underwritten by a Calvin College 
-sabbatical grant.}
-\end{abstract} 
-
-%\begin{multicols}{2}
-
-\section{How does your garden grow?}
-
-In 19xx, millions of the most productive hectares of wheat fields
-in the ``bread basked of America'' turned
-to dust, seemingly overnight. The top soil was churned up by 
-fierce winds to create nightmarish dust storms that lasted
-for nearly a decade. Bankrupt
-farmers were forced to move. Those who chose to stay lived
-in poverty or died from maladies associated with the incessant
-storms of dust. While there are many causes cited for 
-this dust bowl era, there is no doubt that it was a man-made
-catastrophe. The prairie lands had thrived for
-hundreds of years in the face of similar natural conditions  before settlement.
-Drought tolerant buffalo grass, with its deep roots, served
-as an anchor for the entire ecosystem. The ruthless forces of 
-evolution had made sure of that. Any element of the ecosystem
-that could not take the harsh winds and water-less seasons
-did not last. And yet, this prairie, left mostly untouched
-by human society, supported a thriving population of
-flora and fauna. In XXXX, over XXXXX heads of buffalo
-as well as.....prairie dogs, etc......survived and thrived
-in those harsh conditions.
-
-The ecosystem that existed before the settlers came was abundantly
-resilient. It weathered extreme droughts and extreme rains well.
-But, entrepreneurs and others who came across that
-empty prairie in the late nineteenth century could be excused for 
-looking at all those seemingly empty acres and thinking they were
-going to waste.  Acres such as these, could be
-more efficiently used to produce much needed food for the 
-the burgeoning American population that was desperately
- in need of bread.
+GDP is deceptively simplistic. Underneath this number
+is a complex network of flows of goods, services, materials, and energy 
+across
+a large number of industries. Flows
+of inputs to and outputs from each industry are used 
+to create economic input-output (I-O) tables, from which
+GDP is calculated.
+These data have been meticulously collected
+since the early 20th century, ever since Wasily Leontief developed
+the input-output model of the economy. He later won the Nobel
+prize in economics for this work.
+These annual snapshots of the economic network 
+provide insight into how the economy changes,
+adapts, or evolves
+over time. Many have proposed that economy may indeed evolve,
+in a manner similar to an ecosystem. (See e.g. \cite{nelson_evolutionary_1985,arthur_complexity_1999,durlauf_complexity_2005, colander_complexity_2014})
+With that in mind, ecologist \citet{ulanowicz_quantifying_2009} has
+re-framed his metrics for ecological input-output tables
+to use economic input-output tables. These metrics calculate 
+measures of ``fitness for
+evolution,'' or robustness of a system. 
+Robust systems
+have an optimal balance of what
+Ulanowicz terms ``systemic
+efficiency'' and ``resiliency capacity.'' 
+Following Ulanowicz,
+others have also applied 
+these metrics  across a wide variety of economic settings. One
+interesting finding so far is that  measures of economic robustness are
+consistently
+lower than those of ecosystem robustness. Does
+this indicates that economies are
+ more vulnerable to shocks than ecosystems? Or, is
+the optimal balance of efficiency and capacity 
+different for economies than for ecosystems? This paper 
+sheds light on these questions by generating
+Ulanowicz' metrics for a wide spectrum of simulated economies.
+Using agent-based modelling, economies are generated that have varying
+degrees of
+industrialization and network structures. Their responses to
+exogenous shocks are one measure of robustness. These
+measures are compared to the ecological measures of robustness
+to explore appropriate values of robustness for
+economies as measured by ENA. The results suggest that... 
  
 
+\end{abstract} 
 
 
-Through technology and back-breaking labor
-these vacant acres of prairie were transformed
-to highly efficient (from the human standpoint) food
-production. Thus, settlers, risk-takers, and those without many other
-good options, were enticed to move from the east to
-what appeared to be empty land and stake a claim. Families
-were given loans for farm equipment and seed. County
-extensions cropped up to help explain best practices for farming.
-From XXXX to XXXX over XXXX bushels of wheat were produced.
-Indeed, the productivity proved almost too good. 
-The acres were so productive
-that the abundant supply dropped the price of wheat to
-levels that wouldn't support the farms.  
-The government then
-provided price supports and farming continued.
 
-However, the the prices bottoming-out were not the only
-evidence that this economy had over-shot the 
-optimal point of efficiency. As more land was added to arable
-fields, land that had become less productive had to be
-augmented with chemicals.
-The land kept producing, but it also became vulnerable to 
-weather extremes. 
+\section{Introduction: Preventing the Dust Bowl}
 
-When the extreme droughts of 19xx and 19xx hit, the highly efficient, 
-productive economy
-crashed unceremoniously. ... what happened?   ...
+Like the stock market crash of 1929, the massive ecological disaster 
+that struck the Great Plains in the 1930's was largely unexpected.
+The relatively cheap cost of land had enticed 
+droves of settlers to move west, stake a claim,
+and begin cultivating  acres of  prairie land. 
+Agricultural productivity increased
+over three hundredfold between the 1880
+and 1930. Thriving farms and villages dotting the
+previously barren prairie landscape foretold nothing
+but a healthy, growing economic future.
 
-\begin{figure}
+However,  the rapid economic growth hid the fact that the
+agricultural productivity and economic growth
+of the Great Plains were coming at the expense of ecological 
+resilience. Tilled acres and grazing lands gradually replaced
+vast acres of what had seemed to be empty prairie land. 
+However, the prairies had not been empty. They were dense ecosystems that had
+been honed over time to thrive in the windy, arid desert climate of the
+Great Plains. The sparse clumps 
+of buffalo grass that gave the prairie landscape its 
+deceptively barren look, had served an invaluable niche
+role
+in the prairie ecosystem. Over time, the grass had
+evolved long roots to anchor the soil, and a 
+cellular structure that could provide nutrition to the
+mammals living in the arid conditions. Uprooting
+the buffalo grass to make way for productive agricultural land 
+seemed innocuous enough. And for several years, nothing seemed
+to indicate differently. Inevitably, though, the drought years
+returned and the devastating vulnerability
+of the land was
+exposed. 
+
+From the early 1930s until the drought ended in 1939,
+dust storms such as the one depicted
+in Figure~\ref{fig:dust}  blew across the Great Plains. 
+These ``black blizzards'' removed millions of tons
+of topsoil and scattered the fine silt. 
+Great Plains soil was blown all the way to the eastern seaboard.
+Ships in the Atlantic ocean, as far as 300 miles off shore
+reported appearances of the fine silt.~\citep{kassass_drought_1987}
+
+\citet{kassass_drought_1987}
+\citet[p. 36]{kassass_drought_1987}
+
+
+\begin{figure}[H]
 \centering\
-\includegraphics[width=.9\linewidth]{Dust-storm-Texas-1935.png}
-\caption{``Black Blizzard'' Texas, 1935.}
-\label{fig:ulano_ex}
+\includegraphics[width=\linewidth]{Images/noaaphoto1935.jpg}
+\caption{Photograph of a dust storm approaching Stratford, Texas, 1935. Credit: U.S. 
+National Oceanic and Atmospheric Administration, George E. Marsh Album
+(www.photolib.noaa.gov/htmls/theb1365.htm).
+}
+\label{fig:dust}
 \end{figure}
+Federal regulations on farming practices, WPA irrigation projects in the 1930's
+and the end of the drought in 1939 eventually brought the
+land back into balance. It took at least three decades,
+however, to
+return the land to a productive and livable state. 
 
-%{By Credit: NOAA George E. Marsh Album - Source: original upload 7 March 2005 in english wikipedia by w:en:User:Brian0918; there from %http://www.photolib.noaa.gov/htmls/theb1365.htmSource: original upload 7 March 2005 in english wikipedia by w:en:User:Brian0918; there from welding training, Public %Domain, https://commons.wikimedia.org/w/index.php?curid=235911}
 
-By using only productivity
-as a guide, society missed the signals that could
-have warned against this type of farming. If
-instead society had sought optimal 
-balance of productivity and resiliency, rather than simply
-productivity, the results might have been different.
+The feast to famine gyrations of the desert southwest economy 
+was not necessarily inevitable. In 1879, the first U.S. Geological Survey
+was commissioned to map the more than 1.2 billion acres of 
+the largely arid land owned by
+the federal government, before settlers from the east 
+began settling the Great Plains in earnest. 
+In the ``Report on the Lands
+of the Arid Regions of the United States,'' geologist
+John Wesley Powell laid out an
+ecologically-based plan for humans settlements.
+Homestead boundaries would be based on 
+the watershed and small systems of dams built, so that 
+local communities would have property rights to their own water.
 
-But, what might a goal of ``optimal balance of productivity
+Powell's recommendations would not have created 
+an environment conducive to large concentrations
+of human population and farms in the desert southwest.
+Instead, it would have been an loosely connected
+network of smaller, water-based local communities.
+Each community would self-regulate and maintain 
+a scale appropriate to the water supply.
+Instead, little planning and oversight accompanied
+the great westward expansion. Homestead boundaries were 
+drawn along neat, square grids. Access to water
+involved massive water capture and redirection
+projects, such as the Hoover and other large
+dams built during this time. 
+The Colorado river served as the most water
+supply for the western states. Sharing this
+one large water source involved negotiations and 
+long-term commitments with distant
+up-stream and down-stream communities.  
+The 1922 Colorado river compact, which is
+largely still in force today,
+gives approximately 50\% of the approximately 600 cubic
+meters per second water flow to California and
+Colorado, and splits the rest between five other western states.
+This water-sharing compact made it possible
+for the massive Hoover Dam project
+to collect and direct massive
+amounts of water and energy 
+to create cities in the desert.
+
+The Hoover dam and cities in the desert such
+Phoenix
+would not have made sense under
+Powell's ecological approach. 
+Instead of large mega-cities such as
+Los Angelas and Phoenix, located in 
+the desert and heavily
+dependent on an external water supply.
+In many ways, the resulting network of large cities 
+connected to massive public
+infrastructure are efficient in that they 
+take advantage of
+agglomeration efficiencies and increasing
+returns to scale. However, similar to the
+dust bowl phenomenon, this type of
+economic network can be vulnerable to water supply
+shocks. 
+This stands is contrast to the structure of the 
+economy envisioned by Powell. The 
+very large metropolises such as Phoenix
+and L.A. would not exist. Instead, the economy
+would be made up of many more smaller-sized communities,
+scaled in proportion to the availability of 
+water and power that could be supplied by
+nearby series of small dams. The economic scale
+and local management might have proven
+more resilient  during 
+the drought years of the dust bowl. The growth
+and development of the economy over time might
+have prevented
+the contemporary water crises and water rights'
+disputes between the western states, and between
+the U.S. and Mexico. 
+Indeed, a U.N report uses the development of the
+Great Plains leading up to the dust bowl era as an
+example of how not to undertake economic development.~\cite{kassass_drought_1987}.
+
+The feast and famine gyrations of the Great Plains economy
+suggests
+that it could be fruitful to explore measures that 
+can describe aspects of an economy beyond productivity
+growth. Recently, \cite{arthur_complexity_1999} and 
+others have argued that the economy grows, or evolves,
+like an ecosystem. That is,
+the economy is not well-described in aggregates of capital and labor,
+but rather in the network of flows between heterogeneous
+economic actors such as
+industries, consumers, and the physical world. In other words,
+the economy evolves like a complex adaptive system. 
+
+The health of a complex adaptive system is measured 
+differently than that of a machine. While the
+total amount of output of a CAS is one measure, its
+ability to innovate and re-create in the face of environmental
+changes is equally important. 
+If this is true, what metrics  
+beyond GDP might be useful to evaluate the health of an
+economy that evolves more akin to a garden than a machine?
+The next section discusses the recent work of Ulanowicz, King, 
+Khazzari and others who have applied ecological information metrics
+used to understand the efficiency, resilience, and 
+evolutionary robustness attributes of ecosystems
+ to describe an economy or economic sector.
+
+
+\section{Economies as Complex Adaptive Systems}
+
+What are the root causes of economic growth and development? Indeed,
+what exactly is economic growth and how does it differ from
+economic development? What contributes to the resiliency of an economic system?
+
+
+
+How might the efficiency, resiliency, and robust-ness
+of a growing economy be described? What would an ``optimal balance of productivity
 and resiliency'' look like? This is a question that biologists 
-such as Ulanowicz~\citet{ulanowicz_quantifying_2009},
-Khazzari~\citet{}, and others have considered in the
-context of ecosystems. They noticed that when an 
+have considered in the
+context of ecosystems. A few decades ago, ecologists
+began using an input-output model to describe
+ecosystems as primarily a
+a network of flows, similar to an economy. Developed 
+originally by Wasily Leontief (who won the Nobel prize for this work
+in 1974), input-output tables developed the input-output model of the economy
+are a modeling technique developed by 
 ecosystem is modeled as
 a network of flows, say of carbon that passes from prey
 to predator when consumed, metrics developed
@@ -139,25 +302,42 @@ that provide redundant forms of prey,
 are more robust to a shock to the population of one of 
 the sources of sustenance for predators. 
 
-Ecological information
-metrics can characterize an ecosystem as overly
-efficient, overly resilient, or robust (good balance between
-efficiency and resilience) by
-examining the network of carbon transfers 
-up and across food chains. The simplified
-ecosystem food chain in Figure~\ref{fig:ulano_ex}
-can be used to illustrate a trade-off between 
-efficiency and resiliency as measured by
-the information metrics.
+One promising source is the work of 
+Ulanowicz~\cite{ulanowicz_quantifying_2009}
+based on the work of MacKay~\cite{mackay_information_1969}
+and others who have applied measures of ecosystem vitality to
+economic vitality. Recently, the work of  Kharrazi and co-authors~\cite{kharrazi_examining_2015}\cite{kharrazi_quantifying_2013}\cite{,kharrazi_measuring_2016,kharrazi_network_2017},
+King~\cite{king_information_2016} and others~\cite{huang_ecological_2014,zhang_analysis_2014,wang_inter-country_2016} have
+applied these ecological information metrics to
+the economy.
 
-\begin{figure}
+Ecological information
+metrics provide summary measures of a network of flows 
+that characterize system attributes such as:
+how much the network produces (total system throughput, $TST$),
+how efficient the network is in directing flows of 
+inputs to their most productive uses, how
+resilient the system is to shocks, and how
+robust the system for the long-term by
+an appropriate balance of efficiency and resiliency.
+
+The simplified
+ecosystem food chain in Figure~\ref{fig:ulano_ex}
+can be used to illustrate how measures of
+efficiency and resiliency and robustness
+information metrics reflect characteristics of
+a network.
+
+\begin{figure}[H]
 \centering\
-\includegraphics[width=.9\linewidth]{Ulano_ex.png}
-\caption{Simplified network of carbon flows (in units of) 
+\includegraphics[width=.9\linewidth]{Images/Ulano_ex.png}
+\caption{Simplified network of carbon flows (in units of $mgCm^{-2}y^{-1}$) 
 in a southern Florida wetland. 
-\textit{Source:~\cite{ulanowicz_quantifying_2009}}}
+\textit{Source: Author's calculations and Figure 1 from~\cite{ulanowicz_quantifying_2009}.}}
 \label{fig:ulano_ex}
 \end{figure}
+
+One total system throughput (the sum of all flows)
 
 To use ecological information metrics,  the network of flows are 
 converted to an input-output
@@ -168,19 +348,66 @@ contains the volume of the flow from species \emph{i} to species \emph{j}.
 For example, the above ecological network of flows could be
 represented in the following input-output matrix:
 
-\renewcommand{\kbldelim}{[}% Left delimiter
-\renewcommand{\kbrdelim}{]}% Right delimiter
+\renewcommand{\kbldelim}{[}% Changes default Left  delimiter from ( to [
+\renewcommand{\kbrdelim}{]}% Changes default Right delimiter from ( to [
 
 \begin{equation*}
 T = 
 \kbordermatrix{
-   & p & t& f & s & a  \cr
- p & 0 & 64.5 & 11.9 & 14.0 & 0  \cr
- t & 0 & 0 & 0& 0& 6.25  \cr
- f &0 &0 & 0&0 &  4.13 \cr
- s &0 & 0& 0& 0 &  1.79 \cr
- a &0 & 0 & 0 & 0 & 0 \cr}
+   & P & T & F & S & A          \cr
+ P & 0 & 64.5 & 11.9 & 14.0 & 0 \cr
+ T & 0 & 0 & 0 & 0 & 6.25 \cr
+ F & 0 & 0 & 0 & 0 & 4.13 \cr
+ S & 0 & 0 & 0 & 0 & 1.79 \cr
+ A & 0 & 0 & 0 & 0 & 0 \cr}
  \end{equation*}
+\\
+\\
+Biologist Ulanowicz and others have applied
+information metrics to this ecosystem I-O
+matrix. First, this ecosystem can be summarized
+in terms of its efficient use of materials.
+That is, how well do inputs flow to the species
+with the ability to produce the most output with them. 
+In the wetland ecosystem for example, notice
+that for every unit of carbon flowing in, 
+the Turtle species provides .10 units $(6.25/64.5)$
+of carbon to
+the upstream species (Alligators). Similarly, 
+the Fish and
+Snake species provide .35 and .13 units of 
+carbon for the upstream species per 1 
+unit of output.  Fish are the most efficient
+producers of carbon. 
+
+If Turtles and Snakes are much less efficient producers of carbon,
+why have they not been winnowed out by the forces of 
+natural selection? Because the long-term
+sustainability of an ecosystem requires not only
+efficient use of resources, but redundancy and
+``slack'' capacity to allow recovery and
+innovation as the environment changes. 
+
+If the sole measure of the robustness of
+an ecosystem were, 
+all of the carbon would flow from Prawns through
+Fish to the final user, Alligators,  as
+in Figure~\ref{fig:ulano_ex1}. The
+TST
+of the system would
+indeed grow from 102 units to 121.8 units.
+However, the ability of the ecosystem to
+withstand a shock to the Fish population
+would drop to zero. 
+
+\begin{figure}[H]
+\centering\
+\includegraphics[width=.9\linewidth]{Images/Ulano_ex1.png}
+\caption{Simplified network of carbon flows (in units of $mgCm^{-2}y^{-1}$) 
+in a southern Florida wetland. 
+\textit{Source: Author's calculations and Figure 2 from~\cite{ulanowicz_quantifying_2009}.}}
+\label{fig:ulano_ex1}
+\end{figure}
 
 The input-output model of inter-species flows
 is based off the Leontief input-output matrix of
@@ -213,24 +440,11 @@ resiliency of the economy. The following section
 uses the Florida wetland ecosystem example to illustrate
 how it can be characterized  relative levels of efficiency and resiliency, an economy can be too.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Describing Efficiency and Resiliency}
-\cite{arthur_complexity_1999} and 
-\citep{arthur_complexity_2015,colander_review_2002} and
-many others have argued that the economy grows, or evolves,
-like a complex adaptive system.~\citep{arthur_complexity_2015} 
-If this is true, what metrics  
-beyond GDP might be useful to evaluate the health of the
-economy? One promising source is the work of 
-Ulanowicz~\cite{ulanowicz_quantifying_2009}
-based on the work of MacKay~\cite{}
-and others who have applied measures of ecosystem vitality to
-economic vitality. These measures arise from the
-information, or network,  analysis of MacKay~\cite{}
-and others. Recentlyl, King~\cite{} and Kharrazi~\cite{} have
-applied these ecological information metrics to
-the economy.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Ecologial information metrics can provide summary measures for networks 
+Ecological information metrics can provide summary measures for networks 
 of flows. An ecosystem can be seen as a network of flows of 
 carbon, lower members of the food chain provide energy in 
 the form of carbon (?)
@@ -269,6 +483,44 @@ efficiency, but increases the overall robustness of the economy.
 
 How might the robustness of an economy be measured? 
 
+%The following picture is copied and modified from the code in the manual at this website: https://www.bu.edu/math/files/2013/08/tikzpgfmanual.pdf (page 162)
+\begin{center}
+\begin{tikzpicture}[scale=6]
+\draw[->] (-0.1,0) -- (1.1,0) node[right] {$\alpha=f(\textit{eff},\textit{res})$};
+\draw[->] (0,-0.1) -- (0,0.5) node[left] {$F=-\alpha log(\alpha)$};
+\draw[color=blue][domain=0.001:1] plot[id=F] function{-x*log(x)};
+\draw (0.36 cm,1pt) -- (0.36,-1pt) node[below] {$\alpha^{*}$};
+\draw (0.3 cm,.37) -- (0.44,.37) node[right] {$F'=0$};
+% \foreach \y in {1,2,3}
+%\draw (1pt,\y cm) -- (-1pt,\y cm) node[left] {$\y$};
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[scale=6]
+\draw[->] (-0.1,0) -- (1.1,0) node[right] {$\alpha=f(\textit{eff},\textit{res})$};
+\draw[->] (0,-0.1) -- (0,0.5) node[left] {$F=-\alpha log(\alpha)$};
+\draw[color=blue][domain=0.001:1] plot[id=F] function{-x*log(x)};
+\draw (0.36 cm,1pt) -- (0.36,-1pt) node[below] {$\alpha^{*}$};
+\draw (0.3 cm,.37) -- (0.44,.37) node[right] {       $F'=0$};
+\draw [color=red] (.2,.32188) circle (.2pt) node[above] {$A$};
+\draw [color=red] (1,0) circle (.2pt) node[below] {$B$};
+% \foreach \y in {1,2,3}
+%\draw (1pt,\y cm) -- (-1pt,\y cm) node[left] {$\y$};
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[scale=6]
+\draw[->] (-0.1,0) -- (1.1,0) node[right] {$\alpha=f(\textit{eff},\textit{res})$};
+\draw[->] (0,-0.1) -- (0,0.5) node[left] {$F=-\alpha^{\beta} log(\alpha^\beta)$};
+\draw[color=blue][domain=0.001:1] plot[id=F] function{-x**1.288*log(x**1.288)} ;
+\draw[color=green][domain=0.001:1] plot[id=F] function{-x**2.7*log(x**2.7)} ;
+\draw (.6,.2) node[right] [scale=.75] {$\beta=1.288$}
+\draw (.8,.4) node[right] [scale=.75] {$\beta=\textit{e}$}
+
+\end{tikzpicture}
+\end{center}
 
 \section{Application to the U.S. Energy Sector}
 Similar to this previous work, we will apply ecological
@@ -317,25 +569,14 @@ Fitness
         + 1 
 \bigg)$         \\[.25in]
 
- 
-
-
 Robustness & $R = TST \cdot F$\\[.25in]
-
 
 & $\frac{\partial R}{\partial T_{ij}} = F + \frac{TST \cdot F'}{C}
 \bigg(log \big(\frac{T_{ij} \cdot TST}{T_{i.} T_{.j}} \big) 
 + \alpha log \big( \frac{T^{2}_{ij}}{T_{i.}T_{.j}} 
 \big) \bigg)$ \\[.25in]
 
-
-
-
-
 First-order Conditions & $F = 1, F'=0$ \\[.25in]
-
-
-
 
 \end{tabular}
 \end{sc}
@@ -374,7 +615,8 @@ in matrix $\mathbf{M}$ (e.g. $TST=GRAND\sum \mathbf{IO})$ \\
 \subsection{Interpretation}
 
   The constant, $-\frac{e}{log(e)}$, in the formula for \emph{Fitness} 
-  is constructed so that the function on the value of 1 at the maximum. The adjustable parameter, $\beta$, 
+  is constructed so that the function takes on the value of 1 at the maximum. 
+  The adjustable parameter, $\beta$, 
   allows the optimal $alpha$ to vary across contexts. For example, 
   \cite{ulanowicz_quantifying_2009} suggests setting $\beta=1.288$ and 
   thus optimal $\alpha = .46$ for ecosystems. They estimated the 
@@ -431,8 +673,29 @@ Capacity (SE + RC)
 \vskip -0.1in
 \end{table} 
 
-\bibliographystyle{plainnat}
-\bibliography{garden_economy}
+%\bibliographystyle{plainnat}
+%\bibliography{agent_based_modelling}
+
+\printbibliography
 \end{document} 
 
 
+% For later...
+
+\renewcommand{\abstractname}{Acknowledgements}
+\begin{abstract}
+This research project was generously underwritten by the Calvin College 
+sabbatical program.
+The computer simulations for this research were
+performed using the Calvin College supercomputing cluster,
+which was upgraded with funds provided under NSF Award \#1726260. 
+The author thanks research assistants, Anthony Ditta and
+Jiaming Jiang, for their diligent work during the original
+programming and development of the agent-based
+model used to produce the simulations for this research project. 
+Discussions
+with Matthew Kuperus Heun, Jeff Smith, Carey King,
+Loren Haarsma, and John Sherwood contributed
+greatly to this project. All errors are solely 
+the responsibility of the author.
+\end{abstract}
